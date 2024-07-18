@@ -16,23 +16,23 @@ public class CalculatorHistory {
     private int id;
 
     @Column(name = "firstOperator")
-    private int firstOperator;
+    private double firstOperator;
     @Column(name = "signOperator")
     private String sign;
 
     @Column(name = "secondOperator")
-    private int secondOperator;
+    private double secondOperator;
 
     @Column(name = "dateOfOperation")
     LocalDate date = LocalDate.now();
 
     @Column(name = "result")
-    private int result;
+    private double result;
 
     public CalculatorHistory() {
     }
 
-    public void setFirstOperator(int firstOperator) {
+    public void setFirstOperator(double firstOperator) {
         this.firstOperator = firstOperator;
     }
 
@@ -40,11 +40,11 @@ public class CalculatorHistory {
         this.sign = sign;
     }
 
-    public void setSecondOperator(int secondOperator) {
+    public void setSecondOperator(double secondOperator) {
         this.secondOperator = secondOperator;
     }
 
-    public void setResult(int result) {
+    public void setResult(double result) {
         this.result = result;
     }
 }

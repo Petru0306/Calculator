@@ -119,17 +119,47 @@ public class Calculator {
                     case SUM -> {
                         OperationFactory additionFactory = new AdditionFactory();
                         Operation additionOperation = additionFactory.createOperation();
+                        CalculatorHistory calculatorHistory1 = new CalculatorHistory();
+                        calculatorHistory1.setFirstOperator(a);
+                        calculatorHistory1.setSecondOperator(b);
+                        calculatorHistory1.setSign(result.sign);
                         a = calculator.executeOperation(additionOperation, a, b);
+                        calculatorHistory1.setResult(a);
+                        entityManager.getTransaction().begin();
+                        entityManager.persist(calculatorHistory);
+                        entityManager.getTransaction().commit();
+                        entityManager.close();
+                        entityManagerFactory.close();
                     }
                     case SUB -> {
                         OperationFactory subtractionFactory = new SubtractionFactory();
                         Operation subtractionOperation = subtractionFactory.createOperation();
+                        CalculatorHistory calculatorHistory1 = new CalculatorHistory();
+                        calculatorHistory1.setFirstOperator(a);
+                        calculatorHistory1.setSecondOperator(b);
+                        calculatorHistory1.setSign(result.sign);
                         a = calculator.executeOperation(subtractionOperation, a, b);
+                        calculatorHistory1.setResult(a);
+                        entityManager.getTransaction().begin();
+                        entityManager.persist(calculatorHistory);
+                        entityManager.getTransaction().commit();
+                        entityManager.close();
+                        entityManagerFactory.close();
                     }
                     case MUL -> {
                         OperationFactory multiplicationFactory = new MultiplicationFactory();
                         Operation multiplicationOperation = multiplicationFactory.createOperation();
+                        CalculatorHistory calculatorHistory1 = new CalculatorHistory();
+                        calculatorHistory1.setFirstOperator(a);
+                        calculatorHistory1.setSecondOperator(b);
+                        calculatorHistory1.setSign(result.sign);
                         a = calculator.executeOperation(multiplicationOperation, a, b);
+                        calculatorHistory1.setResult(a);
+                        entityManager.getTransaction().begin();
+                        entityManager.persist(calculatorHistory);
+                        entityManager.getTransaction().commit();
+                        entityManager.close();
+                        entityManagerFactory.close();
                     }
                     case DIV -> {
                         if (b == 0) {
@@ -138,12 +168,32 @@ public class Calculator {
                         }
                         OperationFactory divisionFactory = new DivisionFactory();
                         Operation divisionOperation = divisionFactory.createOperation();
+                        CalculatorHistory calculatorHistory1 = new CalculatorHistory();
+                        calculatorHistory1.setFirstOperator(a);
+                        calculatorHistory1.setSecondOperator(b);
+                        calculatorHistory1.setSign(result.sign);
                         a = calculator.executeOperation(divisionOperation, a, b);
+                        calculatorHistory1.setResult(a);
+                        entityManager.getTransaction().begin();
+                        entityManager.persist(calculatorHistory);
+                        entityManager.getTransaction().commit();
+                        entityManager.close();
+                        entityManagerFactory.close();
                     }
                     case POW -> {
                         OperationFactory powerFactory = new PowerFactory();
                         Operation powerOperation = powerFactory.createOperation();
+                        CalculatorHistory calculatorHistory1 = new CalculatorHistory();
+                        calculatorHistory1.setFirstOperator(a);
+                        calculatorHistory1.setSecondOperator(b);
+                        calculatorHistory1.setSign(result.sign);
                         a = calculator.executeOperation(powerOperation, a, b);
+                        calculatorHistory1.setResult(a);
+                        entityManager.getTransaction().begin();
+                        entityManager.persist(calculatorHistory);
+                        entityManager.getTransaction().commit();
+                        entityManager.close();
+                        entityManagerFactory.close();
                     }
                     default -> {
                         System.out.println("Error");
