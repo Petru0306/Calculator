@@ -48,5 +48,41 @@ public class CalculatorHistory {
     public void setResult(double result) {
         this.result = result;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public double getFirstOperator() {
+        return firstOperator;
+    }
+
+    public String getSign() {
+        return sign;
+    }
+
+    public double getSecondOperator() {
+        return secondOperator;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public double getResult() {
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "CalculatorHistory{" +
+                "id=" + id +
+                ", firstOperator=" + firstOperator +
+                ", sign='" + sign + '\'' +
+                ", secondOperator=" + secondOperator +
+                ", date=" + date +
+                ", result=" + result +
+                '}';
+    }
 }
 
