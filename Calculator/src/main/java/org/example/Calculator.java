@@ -251,7 +251,7 @@ public class Calculator {
                                 number = Integer.parseInt(operator);
                             } catch (NumberFormatException e) {
                                 System.out.println("Error --> invalid id number");
-                                continue activeMenu;
+                                continue entityMenu;
                             }
                             if (number == 1) {
                                 mofyfierMenu:
@@ -262,9 +262,7 @@ public class Calculator {
                                             2. second operator
                                             3. sign operator
                                             4. result operator
-                                            5. date
-                                            6. entire entity
-                                            7. exit
+                                            5. exit
                                             ----------------------------""");
                                     operator = scanner.nextLine();
                                     if (operator.equals("exit")) {
@@ -284,7 +282,7 @@ public class Calculator {
                                             try {
                                                 doperator = Double.parseDouble(operator);
                                             } catch (NumberFormatException e) {
-                                                System.out.println("Error --> invalid id number");
+                                                System.out.println("Error --> invalid operator");
                                                 continue mofyfierMenu;
                                             }
                                             calculatorHistoryadmin.setFirstOperator(doperator);
@@ -298,7 +296,7 @@ public class Calculator {
                                             try {
                                                 doperator = Double.parseDouble(operator);
                                             } catch (NumberFormatException e) {
-                                                System.out.println("Error --> invalid id number");
+                                                System.out.println("Error --> invalid operator");
                                                 continue mofyfierMenu;
                                             }
                                             calculatorHistoryadmin.setSecondOperator(doperator);
@@ -327,7 +325,7 @@ public class Calculator {
                                             try {
                                                 doperator = Double.parseDouble(operator);
                                             } catch (NumberFormatException e) {
-                                                System.out.println("Error --> invalid id number");
+                                                System.out.println("Error --> invalid operator");
                                                 continue mofyfierMenu;
                                             }
                                             calculatorHistoryadmin.setResult(doperator);
@@ -339,13 +337,15 @@ public class Calculator {
                                 }
                             } else if (number == 2) {
                                 System.out.println(calculatorHistoryadmin.toString());
+                            } else {
+                                System.out.println("Error --> invalid id number");
                             }
                         }
                     } else if (operator.equals("exit")) {
                         return;
                     } else {
                         System.out.println("Error --> invalid action");
-                        continue adminmenu;
+                        continue activeMenu;
                     }
                 }
             } else if (adminPasswordVerifier.equals("exit")) {
